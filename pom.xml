@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+   
+    <groupId>com.Ox08.experiments</groupId>
+    <artifactId>tiny-xmlrpc-parent</artifactId>    
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <name>Tiny XML-RPC Project</name>
+    <url>https://github.com/alex0x08/paster</url>
+    <inceptionYear>2023</inceptionYear>
+        
+    <scm>
+        <connection>scm:git:https://github.com/alex0x08/paster.git</connection>
+        <url>scm:git:https://github.com/alex0x08/paster.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>deployment</id>
+            <name>Internal Releases</name>
+            <url>file:///./maven-repository/</url>
+        </repository>
+    </distributionManagement>
+        
+    <developers>
+        <developer>
+            <name>Alex Chernyshev</name>
+            <timezone>GMT+4</timezone>
+        </developer>
+    </developers>
+        
+    <organization>
+        <name>0x08 Software</name>
+        <url>http://0x08.tk</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+        
+    <properties>
+        
+        <revision>1.0.1-RELEASE</revision>
+        <main.basedir>${basedir}</main.basedir>
+
+        
+        <flatten-maven-plugin.version>1.2.2</flatten-maven-plugin.version>
+        <maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
+        <maven-dependency-plugin.version>3.6.1</maven-dependency-plugin.version>
+        <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
+        <netbeans.hint.license>apache20</netbeans.hint.license>
+    </properties>
+
+    <modules>
+        <module>library</module>
+        <module>samples/server</module>
+        <module>samples/servlet</module>
+        <module>samples/client</module>
+    </modules>
+   
+
+    <build>
+        <pluginManagement>
+            
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>buildnumber-maven-plugin</artifactId>
+                    <version>3.1.0</version>
+
+                    <configuration>
+                        <format>{0,number}</format>
+                        <items>
+                            <item>buildNumber</item>
+                        </items>
+                        <doCheck>false</doCheck>
+                        <doUpdate>false</doUpdate>
+                        <revisionOnScmFailure>unknownbuild</revisionOnScmFailure>
+                        <getRevisionOnlyOnce>true</getRevisionOnlyOnce>
+                    </configuration>
+                </plugin>
+
+               
+            </plugins>  
+        </pluginManagement>
+        
+        <plugins>
+        
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>${flatten-maven-plugin.version}</version>
+                <inherited>true</inherited>
+                <executions>
+                    <execution>
+                        <!-- Tidy up all POMs before they are published -->
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                        <configuration>
+                            <updatePomFile>true</updatePomFile>
+                            <flattenMode>oss</flattenMode>
+                            <pomElements>
+                                <parent>expand</parent>
+                                <distributionManagement>remove</distributionManagement>
+                                <repositories>remove</repositories>
+                            </pomElements>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+   
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <inherited>false</inherited>
+                <executions>
+                    <execution>
+                        <id>buildnumber</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                
+            </plugin>    
+   
+            
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven-dependency-plugin.version}</version>
+                
+            </plugin>
+          
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                
+            </plugin>
+            
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>${maven-install-plugin.version}</version>
+            </plugin>
+
+        </plugins>
+        
+    </build>
+    
+
+
+</project>

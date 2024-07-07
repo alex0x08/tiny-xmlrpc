@@ -1,0 +1,5 @@
+
+
+(xrpc:call "http://localhost:8000/" "example.sumAndDifference" '(:integer 41 :integer 22))
+
+(xrpc:call "http://betty.userland.com/RPC2" "examples.getStateName" '(:integer 41))
