@@ -1,4 +1,4 @@
-[![ru](https://img.shields.io/badge/lang-en-grey.svg)](https://github.com/alex0x08/tiny-xmlrpc/blob/main/README.ru.md)
+[![ru](https://img.shields.io/badge/lang-en-grey.svg)](https://github.com/alex0x08/tiny-xmlrpc/blob/main/README.md)
 
 # Tiny XMLRPC
 Моя супер миниатюрная реализация [XML-RPC протокола](https://en.wikipedia.org/wiki/XML-RPC), меньше 500 строк кода на Java, включая [клиент](https://github.com/alex0x08/tiny-xmlrpc/blob/main/library/src/main/java/com/Ox08/xmlrpc/XmlRpcClient.java) и
