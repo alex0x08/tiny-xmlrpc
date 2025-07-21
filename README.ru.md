@@ -1,11 +1,10 @@
 [![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/alex0x08/teleporta/blob/main/README.ru.md)
 
 # Tiny XMLRPC
-Моя супер миниатюрная реализация XML-RPC протокола, меньше 500 строк кода на Java, включая клиент и сервер.
-[Клиент](https://github.com/alex0x08/tiny-xmlrpc/blob/main/library/src/main/java/com/Ox08/xmlrpc/XmlRpcClient.java) and 
-[Сервер](https://github.com/alex0x08/tiny-xmlrpc/blob/main/library/src/main/java/com/Ox08/xmlrpc/XmlRpcServer.java).
+Моя супер миниатюрная реализация [XML-RPC протокола](https://en.wikipedia.org/wiki/XML-RPC), меньше 500 строк кода на Java, включая [клиент](https://github.com/alex0x08/tiny-xmlrpc/blob/main/library/src/main/java/com/Ox08/xmlrpc/XmlRpcClient.java) и
+[сервер](https://github.com/alex0x08/tiny-xmlrpc/blob/main/library/src/main/java/com/Ox08/xmlrpc/XmlRpcServer.java).
 
-[Тут](https://github.com/alex0x08/tiny-xmlrpc/tree/main/samples) находятся примеры использования этой библиотеки. [Клиент](https://github.com/alex0x08/tiny-xmlrpc/tree/main/samples/client), 
+[Тут](https://github.com/alex0x08/tiny-xmlrpc/tree/main/samples) находятся примеры использования этой библиотеки, [клиент](https://github.com/alex0x08/tiny-xmlrpc/tree/main/samples/client), 
 [сервер](https://github.com/alex0x08/tiny-xmlrpc/tree/main/samples/server) и [сервлет](https://github.com/alex0x08/tiny-xmlrpc/tree/main/samples/servlet)
 
 # Статьи
