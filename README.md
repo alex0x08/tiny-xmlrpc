@@ -1,4 +1,4 @@
-[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/alex0x08/teleporta/blob/main/README.ru.md)
+[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/alex0x08/tiny-xmlrpc/blob/main/README.ru.md)
 
 # Tiny XMLRPC
 My tiny XML-RPC protocol implementation in less than 500 lines of Java code.
